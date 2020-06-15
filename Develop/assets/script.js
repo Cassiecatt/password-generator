@@ -1,12 +1,13 @@
 // Assignment code here
 
-// Empty array
+// Array
 
 var generatedPassword = [];
 
 //Generate password function
 
 function generatePassword() {
+
   // length prompt
   var length = window.prompt("Enter a password length between 8 and 128.");
   length = parseInt(length);
@@ -35,14 +36,16 @@ function generatePassword() {
     getRandomNumber();
   }
    // symbol prompt
-  var userSymbols = window.confirm("Do you want symbols in your password?")
+  var userSymbols = window.confirm("Do you want special characters in your password?")
   console.log(userSymbols)
   if(userSymbols = true) {
     getRandomSymbols();
   }
 } 
 
-// Random functions (lower, upper, number 7 symbol)
+
+
+// Random functions (lower, upper, number & symbol)
 
 //Get random lower case function
 
@@ -95,6 +98,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
+
 
 
 
