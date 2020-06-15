@@ -1,65 +1,81 @@
 // Assignment code here
 
-// Randomized functions defined
-const randomFunctions = {
-  lower: getRandomLower,
-  upper: getRandomUpper,
-  number: getRandomNumber,
-  symbol: getRandomSymbol
-};
+// Empty array
 
-// Variable length defined
+var generatedPassword = [];
 
-var length = "getPasswordlength"
-
-
-
-//Generate password function 
+//Generate password function
 
 function generatePassword() {
-  //inputting a password length
+  // length prompt
   var length = window.prompt("Enter a password length between 8 and 128.");
   length = parseInt(length);
-  if(length >= 8 && length <= 128) {
+    if(length >= 8 && length <= 128) {
     console.log(" Character amount: " + length);
   } else {
     window.alert("Not a valid answer! Please provide a number value 8 - 128.");
     return generatePassword();
-    }
-}
+  }
+   // lowercase prompt
+  var userLower = window.confirm("Do you want lower case letters in your password?");
+    console.log(userLower)
+    if(userLower = true) {
+      getRandomLower();
+  }
+   // uppercase prompt
+  var userUpper = window.confirm("Do you want upper case letters in your password?");
+    console.log(userUpper)
+    if(userUpper = true) {
+      getRandomUpper();
+  }
+   // number prompt
+  var userNumber = window.confirm("Do you want numbers in your password?");
+  console.log(userNumber)
+  if(userNumber = true) {
+    getRandomNumber();
+  }
+   // symbol prompt
+  var userSymbols = window.confirm("Do you want symbols in your password?")
+  console.log(userSymbols)
+  if(userSymbols = true) {
+    getRandomSymbols();
+  }
+} 
 
+// Random functions (lower, upper, number 7 symbol)
 
 //Get random lower case function
 
 function getRandomLower () {
   const lower = 'abcdefghijklmnopqrstuvwxyz'
-  return lower[Math.floor(Math.random() * lower.length)];
+  var pushLower = lower[Math.floor(Math.random() * lower.length)];
+  generatedPassword.push(pushLower)
 }
-console.log(getRandomLower());
 
 //Get random upper case function
 
 function getRandomUpper () {
   const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  return upper[Math.floor(Math.random() * upper.length)];
+  var pushUpper = upper[Math.floor(Math.random() * upper.length)];
+  generatedPassword.push(pushUpper)
 }
-console.log(getRandomUpper());
 
 //Get random numeric value function
 
 function getRandomNumber () {
   const number = '0123456789'
-  return number[Math.floor(Math.random() * number.length)];
+  var pushNumber = number[Math.floor(Math.random() * number.length)];
+  generatedPassword.push(pushNumber)
 }
-console.log(getRandomNumber());
 
 //Get random symbols function
 
-function getRandomSymbol () {
+function getRandomSymbols () {
   const symbols = '!@#$%^&*~<>;/';
-  return symbols[Math.floor(Math.random() * symbols.length)]; 
+  var pushSymbols = symbols[Math.floor(Math.random() * symbols.length)]; 
+  generatedPassword.push(pushSymbols)
 }
-console.log(getRandomSymbol());
+
 
 
 
@@ -79,17 +95,10 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
-generatePassword();
 
 
 
 
-//var passLength = function() {
-    //ask user how many characters they want in password
-    //var promptLength = window.prompt("How many characters long do you want your password? Enter a number 8 - 128.");
 
-    //if (promptLength < 8 && promptLength > 128) {
-     //window.alert("You need to provide a character length between 8 and 128. Please try again");
-      //return passLength();
-    //}
+
 
