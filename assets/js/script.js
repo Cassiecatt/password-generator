@@ -8,7 +8,7 @@ const symbols = ['!@#$%^&*~<>;/'];
 
 var all = ['lower' + 'upper' + 'number' + 'symbols'];
 
-var generatedPassword = [];
+var userSelects = [];
 
 // Random functions (lower, upper, number & symbol)
 
@@ -17,7 +17,7 @@ var generatedPassword = [];
 function getRandomLower () {
   const lower = 'abcdefghijklmnopqrstuvwxyz'
   var pushLower = lower[Math.floor(Math.random() * lower.length)];
-  generatedPassword.push(pushLower)
+  userSelects.push(pushLower)
 }
 
 //Get random upper case function
@@ -25,7 +25,7 @@ function getRandomLower () {
 function getRandomUpper () {
   const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   var pushUpper = upper[Math.floor(Math.random() * upper.length)];
-  generatedPassword.push(pushUpper)
+  userSelects.push(pushUpper)
 }
 
 //Get random numeric value function
@@ -33,7 +33,7 @@ function getRandomUpper () {
 function getRandomNumber () {
   const number = '0123456789'
   var pushNumber = number[Math.floor(Math.random() * number.length)];
-  generatedPassword.push(pushNumber)
+  userSelects.push(pushNumber)
 }
 
 //Get random symbols function
@@ -41,7 +41,7 @@ function getRandomNumber () {
 function getRandomSymbols () {
   const symbols = '!@#$%^&*~<>;/';
   var pushSymbols = symbols[Math.floor(Math.random() * symbols.length)]; 
-  generatedPassword.push(pushSymbols)
+  userSelects.push(pushSymbols)
 }
 
 // Get all function 
@@ -49,7 +49,7 @@ function getRandomSymbols () {
 function getRandomAll () {
   var all = 'lower' + 'upper' + 'number' + 'symbols';
   var pushAll = all[Math.floor(Math.random() * all.length)];
-  generatedPassword.push(pushAll)
+  userSelects.push(pushAll)
 }
 
 //Generate password function
