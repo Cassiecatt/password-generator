@@ -44,7 +44,6 @@ function getRandomSymbols () {
   generatedPassword.push(pushSymbols)
 }
 
-
 //Generate password function
 
 function generatePassword() {
@@ -82,8 +81,15 @@ function generatePassword() {
   if(userSymbols = true) {
     getRandomSymbols();
   }
-} 
 
+  // need to work on this
+  var password = '';
+  for (i = 0; i < length; i++) {
+      var character = Math.floor(Math.random() * all.length);
+      //password += ;
+  }
+  return password;
+} 
 
 
 
