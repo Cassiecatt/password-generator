@@ -56,9 +56,6 @@ function getRandomAll () {
 
 function generatePassword() {
 
-  var length = passwordLength();
-
-
 
   // length prompt
   var length = window.prompt("Enter a password length between 8 and 128.");
