@@ -1,6 +1,10 @@
 // Assignment code here
 
-// Array
+// Arrays
+const lower = ['abcdefghijklmnopqrstuvwxyz'];
+const upper = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const number = ['0123456789'];
+const symbols = ['!@#$%^&*~<>;/'];
 
 var generatedPassword = [];
 
