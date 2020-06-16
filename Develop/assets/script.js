@@ -49,7 +49,7 @@ function getRandomSymbols () {
 function getRandomAll () {
   var all = 'lower' + 'upper' + 'number' + 'symbols';
   var pushAll = all[Math.floor(Math.random() * all.length)];
-  generatePassword.push(all)
+  generatePassword.push(pushAll)
 }
 
 //Generate password function
