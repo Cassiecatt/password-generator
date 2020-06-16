@@ -6,7 +6,44 @@ const upper = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 const number = ['0123456789'];
 const symbols = ['!@#$%^&*~<>;/'];
 
+var all = ['lower' + 'upper' + 'number' + 'symbols'];
+
 var generatedPassword = [];
+
+// Random functions (lower, upper, number & symbol)
+
+//Get random lower case function
+
+function getRandomLower () {
+  const lower = 'abcdefghijklmnopqrstuvwxyz'
+  var pushLower = lower[Math.floor(Math.random() * lower.length)];
+  generatedPassword.push(pushLower)
+}
+
+//Get random upper case function
+
+function getRandomUpper () {
+  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var pushUpper = upper[Math.floor(Math.random() * upper.length)];
+  generatedPassword.push(pushUpper)
+}
+
+//Get random numeric value function
+
+function getRandomNumber () {
+  const number = '0123456789'
+  var pushNumber = number[Math.floor(Math.random() * number.length)];
+  generatedPassword.push(pushNumber)
+}
+
+//Get random symbols function
+
+function getRandomSymbols () {
+  const symbols = '!@#$%^&*~<>;/';
+  var pushSymbols = symbols[Math.floor(Math.random() * symbols.length)]; 
+  generatedPassword.push(pushSymbols)
+}
+
 
 //Generate password function
 
@@ -46,43 +83,6 @@ function generatePassword() {
     getRandomSymbols();
   }
 } 
-
-
-
-// Random functions (lower, upper, number & symbol)
-
-//Get random lower case function
-
-function getRandomLower () {
-  const lower = 'abcdefghijklmnopqrstuvwxyz'
-  var pushLower = lower[Math.floor(Math.random() * lower.length)];
-  generatedPassword.push(pushLower)
-}
-
-//Get random upper case function
-
-function getRandomUpper () {
-  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var pushUpper = upper[Math.floor(Math.random() * upper.length)];
-  generatedPassword.push(pushUpper)
-}
-
-//Get random numeric value function
-
-function getRandomNumber () {
-  const number = '0123456789'
-  var pushNumber = number[Math.floor(Math.random() * number.length)];
-  generatedPassword.push(pushNumber)
-}
-
-//Get random symbols function
-
-function getRandomSymbols () {
-  const symbols = '!@#$%^&*~<>;/';
-  var pushSymbols = symbols[Math.floor(Math.random() * symbols.length)]; 
-  generatedPassword.push(pushSymbols)
-}
-
 
 
 
