@@ -44,18 +44,10 @@ function getRandomSymbols () {
   userSelects.push(pushSymbols)
 }
 
-// Get all function 
-
-function getRandomAll () {
-  var all = 'lower' + 'upper' + 'number' + 'symbols';
-  var pushAll = all[Math.floor(Math.random() * all.length)];
-  userSelects.push(pushAll)
-}
 
 //Generate password function
 
 function generatePassword() {
-
 
   // length prompt
   var length = window.prompt("Enter a password length between 8 and 128.");
@@ -96,7 +88,7 @@ function generatePassword() {
   for (i = 0; i < length; i++) {
       var character = Math.floor(Math.random() * all.length);
       //password += ;
-  }
+  }  
 } 
 
 
