@@ -1,12 +1,6 @@
 // Assignment code here
 
 // Arrays
-const lower = ['abcdefghijklmnopqrstuvwxyz'];
-const upper = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-const number = ['0123456789'];
-const symbols = ['!@#$%^&*~<>;/'];
-
-var all = ['lower' + 'upper' + 'number' + 'symbols'];
 
 var userSelects = [];
 
@@ -14,85 +8,87 @@ var userSelects = [];
 
 //Get random lower case function
 
-function getRandomLower () {
-  const lower = 'abcdefghijklmnopqrstuvwxyz'
-  var pushLower = lower[Math.floor(Math.random() * lower.length)];
-  userSelects.push(pushLower)
+function getRandomLower() {
+  const lower = "abcdefghijklmnopqrstuvwxyz";
+  userSelects.push(lower);
 }
 
 //Get random upper case function
 
-function getRandomUpper () {
-  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var pushUpper = upper[Math.floor(Math.random() * upper.length)];
-  userSelects.push(pushUpper)
+function getRandomUpper() {
+  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  userSelects.push(upper);
 }
 
 //Get random numeric value function
 
-function getRandomNumber () {
-  const number = '0123456789'
-  var pushNumber = number[Math.floor(Math.random() * number.length)];
-  userSelects.push(pushNumber)
+function getRandomNumber() {
+  const number = "0123456789";
+  userSelects.push(number);
 }
 
 //Get random symbols function
 
-function getRandomSymbols () {
-  const symbols = '!@#$%^&*~<>;/';
-  var pushSymbols = symbols[Math.floor(Math.random() * symbols.length)]; 
-  userSelects.push(pushSymbols)
+function getRandomSymbols() {
+  const symbols = "!@#$%^&*~<>;/";
+  userSelects.push(symbols);
 }
-
 
 //Generate password function
 
 function generatePassword() {
-
   // length prompt
   var length = window.prompt("Enter a password length between 8 and 128.");
   length = parseInt(length);
-    if(length >= 8 && length <= 128) {
+  if (length >= 8 && length <= 128) {
     console.log(" Character amount: " + length);
   } else {
     window.alert("Not a valid answer! Please provide a number value 8 - 128.");
     return generatePassword();
   }
-   // lowercase prompt
-  var userLower = window.confirm("Do you want lower case letters in your password?");
-    console.log(userLower)
-    if(userLower = true) {
-      getRandomLower();
+  // lowercase prompt
+  var userLower = window.confirm(
+    "Do you want lower case letters in your password?"
+  );
+  console.log(userLower);
+  // Long way is if (userLower === true)
+  // Long way for false is if (userLower === false), short way is if (!userLower)
+  if (userLower) {
+    getRandomLower();
   }
-   // uppercase prompt
-  var userUpper = window.confirm("Do you want upper case letters in your password?");
-    console.log(userUpper)
-    if(userUpper = true) {
-      getRandomUpper();
+  // uppercase prompt
+  var userUpper = window.confirm(
+    "Do you want upper case letters in your password?"
+  );
+  if (userUpper === true) {
+    getRandomUpper();
   }
-   // number prompt
+  // number prompt
   var userNumber = window.confirm("Do you want numbers in your password?");
-  console.log(userNumber)
-  if(userNumber = true) {
+  console.log(userNumber);
+  if (userNumber === true) {
     getRandomNumber();
   }
-   // symbol prompt
-  var userSymbols = window.confirm("Do you want special characters in your password?")
-  console.log(userSymbols)
-  if(userSymbols = true) {
+  // symbol prompt
+  var userSymbols = window.confirm(
+    "Do you want special characters in your password?"
+  );
+  console.log(userSymbols);
+  if (userSymbols === true) {
     getRandomSymbols();
   }
 
+  var userSelectsStr = userSelects.join("");
   // need to work on this - generating the password
-  var password = '';
-  for (i = 0; i < length; i++) {
-      var character = Math.floor(Math.random() * all.length);
-      //password += ;
-  }  
-} 
-
-
-
+  var password = "";
+  for (let i = 0; i < length; i++) {
+    var characterIndex = Math.floor(Math.random() * userSelectsStr.length);
+    var character = userSelectsStr.charAt(characterIndex);
+    // Long way is password = password + character;
+    password += character;
+  }
+  return password;
+}
 
 // Below code was provided
 
@@ -102,17 +98,10 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log(password);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); 
-
-
-
-
-
-
-
-
+generateBtn.addEventListener("click", writePassword);
